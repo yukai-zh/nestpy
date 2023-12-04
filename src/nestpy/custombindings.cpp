@@ -30,8 +30,9 @@ m.attr("__version__") = "dev";
 #else
     m.attr("__nest_version__") = "";
 #endif
-    //	Binding for the NESTcalc class
+    //	Binding for the NESTcalc class only custom added function
     py::class_<NEST::NESTcalc, std::unique_ptr<NEST::NESTcalc, py::nodelete>>(m, "NESTcalc")
+        .def(py::init<>())
         .def_static("GetDiffTran_Liquid", &NEST::NESTcalc::GetDiffTran_Liquid,
             py::arg("dfield") = 200.,
             py::arg("highFieldModel") = false,
