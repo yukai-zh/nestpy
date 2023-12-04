@@ -40,6 +40,7 @@ set(SOURCES "${SOURCE_DIR}/NEST.cpp" "${SOURCE_DIR}/LArNEST.cpp" "${SOURCE_DIR}/
 # Generate Python module
 add_subdirectory(lib/pybind11)
 pybind11_add_module(nestpy ${SOURCES} "src/nestpy/bindings.cpp")
+pybind11_add_module(nestpy ${SOURCES} "src/nestpy/custombindings.cpp")
 
 target_compile_definitions(nestpy
                            PRIVATE NESTPY_VERSION=${NESTPY_VERSION_INFO} NEST_VERSION=${NEST_VERSION})
