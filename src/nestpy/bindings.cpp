@@ -349,19 +349,6 @@ PYBIND11_MODULE(nestpy, m)
 			py::arg("MolarMass") = 131.293,
 			py::arg("OldW13eV") = true
 		)
-		// added function to pybinding, not presence in default
-		.def_static("GetDiffTran_Liquid", &NEST::NESTcalc::GetDiffTran_Liquid,
-			py::arg("dfield") = 200.,
-			py::arg("highFieldModel") = false,
-			py::arg("T") = 177.15,
-			py::arg("Z") = 54
-		)
-		.def_static("GetDiffLong_Liquid", &NEST::NESTcalc::GetDiffLong_Liquid,
-			py::arg("dfield") = 200.,
-			py::arg("highFieldModel") = false,
-			py::arg("T") = 177.15,
-			py::arg("Z") = 54
-		)
 		// Currently VDetector.FitTBA() requires we reinitialize the detector every time:
 		.def("xyResolution", &NEST::NESTcalc::xyResolution)
 		.def("PhotonEnergy", &NEST::NESTcalc::PhotonEnergy)
